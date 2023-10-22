@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import platesomeLogo from "./images/logo_platesome.png";
 import duck from "./images/duck.png";
 import jordan from "./images/jordan_pic.png";
+import quikwiz from "./images/quikwiz5.png";
+import tinyMiracle from "./images/tinyMiracle.png";
+import ezLearn from "./images/ezLearnLogo.png";
 
 import duckSound from "./sounds/duckSound.mp3";
 
@@ -26,7 +29,7 @@ export default function Home() {
       </div>
 
       <div className="d-flex p-4" style={{ columnGap: "1rem" }}>
-        <img width="30%" src={jordan}></img>
+        <img alt="Jordan's photo" width="30%" src={jordan}></img>
 
         <div>
           <h3>Who am I?</h3>
@@ -54,7 +57,35 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div style={{ border: "red solid 0px" }} className="ms-auto">
+      <h3>My Creations</h3>
+
+      <div className="d-flex">
+        <div
+          className="rotating container"
+          style={{ border: "red solid 0px", width: "25%" }}
+        >
+          <img alt="Tiny Miracles Rescue logo" width="100%" src={tinyMiracle} />
+        </div>
+        <div
+          className="rotating container"
+          style={{ border: "red solid 0px", width: "25%" }}
+        >
+          <img alt="Platesome logo" width="100%" src={platesomeLogo} />
+        </div>
+        <div
+          className="rotating container"
+          style={{ border: "red solid 0px", width: "25%" }}
+        >
+          <img alt="EZLearn GuitAR logo" width="100%" src={ezLearn} />
+        </div>
+        <div
+          className="rotating container"
+          style={{ border: "red solid 0px", width: "25%" }}
+        >
+          <img alt="Quikwiz logo" width="100%" src={quikwiz} />
+        </div>
+      </div>
+      <div style={{ border: "red solid 0px" }} className="me-auto">
         <img
           onClick={() => {
             setDuckClickCount(duckClickCount + 1);
@@ -82,6 +113,7 @@ export default function Home() {
 
         {duckClickCount > 3 && <p className="typewriter">Amazing!</p>}
       </div>
+
       <div class="rotating-image"></div>
 
       {/* <div className="d-flex">

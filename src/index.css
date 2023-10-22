@@ -124,6 +124,17 @@ body {
 
 }
 
+.rotating {
+
+  /* animation: spin 5s linear infinite; Apply the 'spin' animation */
+}
+
+.container{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
