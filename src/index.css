@@ -67,6 +67,7 @@ body {
 }
 
 .rotating-image:hover {
+  
   animation: flipback .5s ease forwards; /* Apply the 'flipback' animation on hover */
   animation-fill-mode: both; /* Make sure the final state is maintained */
 }
@@ -120,6 +121,7 @@ body {
   padding: .5rem 1.5rem .5rem 1.5rem;
   /* background: #c4cceb; */
   background: #c9d0ee;
+  background: #dae0fc  ;
   color: black
 
 }
@@ -134,6 +136,50 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: black solid 1px;
+  transition: all .5s;
+  box-sizing: border-box; /* Include borders and padding in the element's size */
+
+}
+
+.container:hover{
+  background: #c9d0ee;
+  background: #dae0fc  ;
+
+  transition: all .5s;
+  
+}
+
+.container:hover img{
+  transition: all .65s;
+  transform: rotateY(360deg);
+
+
+    /* animation: flipback 3s; */
+     /* Apply the 'flipback' animation on hover */
+    /* animation-fill-mode: both; Make sure the final state is maintained */
+}
+.visible-text {
+  max-height: 0; /* Initially hidden */
+
+  overflow: hidden;
+  opacity: 0;
+  /* visibility: hidden; */
+  transition: max-height 1s, opacity 1s; /* Ensure the transition duration is set */
+
+
+}
+
+.container:hover .visible-text {
+  transition: max-height 1s, opacity 1s; /* Ensure the transition duration is set */
+
+  max-width: 100%; /* Initially hidden */
+
+  max-height: 100vh; /* Initially hidden */
+
+  /* visibility: visible; */
+  opacity: 1;
+
 }
 
 
