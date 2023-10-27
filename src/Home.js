@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
 
 import Button from "react-bootstrap/Button";
 import platesomeLogo from "./images/platesome7.png";
-import duck from "./images/duck.png";
+import duck from "./images/duck_2.png";
 import jordan from "./images/jordan_pic.png";
 import quikwiz from "./images/quikwizlogo6.png";
 import tinyMiracle from "./images/tinyMiracle6.png";
 import ezLearn from "./images/ezLearnLogo6.png";
+import wave from "./images/wave.svg";
 
 import duckSound from "./sounds/duckSound.mp3";
+import Cell from "./Cell";
 
 export default function Home() {
   const [duckClickCount, setDuckClickCount] = useState(0);
@@ -17,8 +19,38 @@ export default function Home() {
 
   const [playSound] = useSound(duckSound);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Function to update the window width state when the window is resized
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add a window resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // The empty dependency array ensures this effect runs only once after initial render
+
+  const divStyle = {
+    display: "inline-block",
+    width: "calc(50% - 0.5px)", // Subtract half of the border width
+    border: "1px solid #000",
+    boxSizing: "border-box",
+  };
+
   return (
     <>
+      {windowWidth < 760 && (
+        <div>
+          This will only render when the window width is less than 760 pixels.
+        </div>
+      )}
+
       <div className="d-flex header">
         <h2 className="me-auto align-self-center mb-0">Jordan Altomare</h2>
 
@@ -30,110 +62,74 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="d-flex p-4" style={{ columnGap: "1rem" }}>
-        <img alt="Jordan's photo" width="25%" src={jordan}></img>
-
-        <div>
-          <h3>Who am I?</h3>
-          <p style={{ textAlign: "left" }}>
-            Some say I'm a myth. Others say I'm a ghost. In reality, I'm just a
-            man who inaccurately recalls other people's descriptions of me.
-          </p>
-          <p style={{ textAlign: "left" }}>
-            I obtained my B.S. in Computer Science from University of Rochester.
-            I have a passion for creating websites that feel as nice as they
-            look. I also enjoy doing mobile app development. Coding is the most
-            fun for me when I get to have some creative influence on the
-            outcome.
-          </p>
-          <p style={{ textAlign: "left" }}>
-            Outside of coding, I enjoy exercising, playing guitar, and listening
-            to The Beatles. Have you given them a listen? They're fantastic:{" "}
-            <a
-              href="https://www.youtube.com/watch?v=NCtzkaL2t_Y"
-              target="_blank"
-            >
-              Don't Let Me Down
-            </a>
-            .
-          </p>
-        </div>
-      </div>
-      <h3>My Creations</h3>
       <div className="p-4">
-        <div className="d-flex" style={{ border: "red solid 0px" }}>
-          <div className="rotating container" style={{ width: "50%" }}>
-            <img
-              style={{ marginLeft: "-20px", marginRight: "20px" }}
-              alt="Tiny Miracles Rescue logo"
-              width="50%"
-              src={tinyMiracle}
-            />
-            <div>
-              <h3>Tiny Miracles</h3>
-              <p className="visible-text">
-                Quikwiz is a fun trivia game created with React. Users are asked
-                old questions from the show Jeopardy! See how many questions you
-                can get correct!
-              </p>
-            </div>
+        <div className="d-flex" style={{ columnGap: "1rem" }}>
+          <div style={{ width: "25%" }}>
+            <img width="100%" alt="Jordan's photo" src={jordan}></img>
           </div>
-          <div
-            onMouseEnter={() => {
-              setHoverBox(2);
-            }}
-            className="rotating container"
-            style={{ width: "50%" }}
-          >
-            <img alt="Platesome logo" width="50%" src={platesomeLogo} />
-            <div>
-              <h3>Platesome</h3>
-              <p className="visible-text">
-                Quikwiz is a fun trivia game created with React. Users are asked
-                old questions from the show Jeopardy! See how many questions you
-                can get correct!
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="d-flex" style={{ border: "red solid 0px" }}>
-          <div className="rotating container" style={{ width: "50%" }}>
-            <img alt="EZLearn GuitAR logo" width="50%" src={ezLearn} />
-            <div>
-              <h3>EZLearn GuitAR</h3>
-              <p className="visible-text">
-                Quikwiz is a fun trivia game created with React. Users are asked
-                old questions from the show Jeopardy! See how many questions you
-                can get correct!
-              </p>
-            </div>
-          </div>
-          <div
-            onMouseEnter={() => {
-              setHoverBox(1);
-            }}
-            onMouseLeave={() => {
-              // setHoverBox(-1);
-            }}
-            className="rotating container"
-            style={{ width: "50%" }}
-          >
-            <img alt="Quikwiz logo" width="50%" src={quikwiz} />
-            <div>
-              <h3>Quikwiz</h3>
-              {hoverBox > -3 && (
-                <p className="visible-text">
-                  Quikwiz is a fun trivia game created with React. Users are
-                  asked old questions from the show Jeopardy! See how many
-                  questions you can get correct!
-                </p>
-              )}
-            </div>
+
+          <div style={{ flex: 1 }}>
+            <h3>Who am I?</h3>
+            <p style={{ textAlign: "left" }}>
+              Some say I'm a myth. Others say I'm a ghost. In reality, I'm just
+              a man who inaccurately recalls other people's descriptions of me.
+            </p>
+            <p style={{ textAlign: "left" }}>
+              I obtained my B.S. in Computer Science from University of
+              Rochester. I have a passion for creating websites that feel as
+              nice as they look. I also enjoy doing mobile app development.
+              Coding is the most fun for me when I get to have some creative
+              influence on the outcome.
+            </p>
+            <p style={{ textAlign: "left" }}>
+              Outside of coding, I enjoy exercising, playing guitar, and
+              listening to The Beatles. Have you given them a listen? They're
+              fantastic:{" "}
+              <a
+                href="https://www.youtube.com/watch?v=NCtzkaL2t_Y"
+                target="_blank"
+              >
+                Don't Let Me Down
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
 
-      <div style={{ border: "red solid 0px" }} className="me-auto">
+      {/* <div
+        style={{
+          margin: "-200px 0",
+          width: "100%",
+        }}
+      >
+        <img
+          style={{
+            width: "100%",
+          }}
+          src={wave}
+        />
+      </div> */}
+
+      <div className="me-auto duck-div mt-4">
+        <div className="background-image"></div>
+        <div className="duck-text">
+          {duckClickCount == 1 && (
+            <p className="typewriter"> It appears to be a duck...</p>
+          )}
+
+          {duckClickCount == 2 && (
+            <p className="typewriter">
+              Maybe if you click it again it will quack...
+            </p>
+          )}
+          {duckClickCount == 3 && (
+            <p className="typewriter">Hmmm... One more time perhaps?</p>
+          )}
+
+          {duckClickCount == 4 && <p className="typewriter">Amazing!</p>}
+        </div>
+
         <img
           onClick={() => {
             setDuckClickCount(duckClickCount + 1);
@@ -145,30 +141,57 @@ export default function Home() {
           width="30%"
           src={duck}
         ></img>
-
-        {duckClickCount > 0 && (
-          <p className="typewriter"> It appears to be a duck...</p>
-        )}
-
-        {duckClickCount > 1 && (
-          <p className="typewriter">
-            Maybe if you click it again it will quack...
-          </p>
-        )}
-        {duckClickCount > 2 && (
-          <p className="typewriter">Hmmm... One more time perhaps?</p>
-        )}
-
-        {duckClickCount > 3 && <p className="typewriter">Amazing!</p>}
       </div>
 
-      <div class="rotating-image"></div>
+      <div className="p-4">
+        <h3 className="mt-4 mb-4">My Creations</h3>
 
-      {/* <div className="d-flex">
+        <div className="me-grid">
+          <Cell
+            link="https://tinymiraclespcr.org/"
+            imgSrc={tinyMiracle}
+            title="Tiny Miracles"
+            altText="Tiny Miracles Rescue logo"
+            description="This is a React website created for use by a non-profit animal
+            rescue, Tiny Miracles Rescue. Users can apply to adopt a furry
+            friend. Firebase is used for storage."
+          />
+          <Cell
+            link="https://platesome.com/"
+            imgSrc={platesomeLogo}
+            title="Platesome"
+            altText="Platesome logo"
+            description="Platesome is a nutrition tracking website created with
+           React. Users can login and track their healthy food choices.
+           Data is stored through Firebase, and users can view their
+           progress through daily, weekly, or monthly bar graphs."
+          />
+          <Cell
+            link="https://abdelk7344.github.io/ezlearnguitar/"
+            imgSrc={ezLearn}
+            title="EZLearn GuitAR"
+            altText="EZLearn GuitAR logo"
+            description="EZLearn GuitAR is an iOS AR application that helps people
+            learn to play guitar. AR markers are displayed on the neck
+            of the guitar to show you where to put your fingers."
+          />
+          <Cell
+            link="https://quikwiz.com/"
+            imgSrc={quikwiz}
+            title="Quikwiz"
+            altText="Quikwiz logo"
+            description="Quikwiz is a fun trivia game created with React. Users are
+            asked old questions from the show Jeopardy! See how many
+            questions you can get correct!"
+          />
+        </div>
+
+        {/* <div className="d-flex">
         <a href="asdf" className="logo">
           <img src={platesomeLogo} />
         </a>
       </div> */}
+      </div>
     </>
   );
 }

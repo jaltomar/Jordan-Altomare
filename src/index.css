@@ -5,9 +5,7 @@ body {
 
 
   font-family: 'Poppins', sans-serif;
-
-
-
+/* font-family:Verdana, Geneva, Tahoma, sans-serif */
 }
 
 *{
@@ -48,7 +46,11 @@ body {
 
 .logo:hover{
   transform: rotateY(360deg);
-  transform: scale(2, 2); 
+
+}
+
+.spinner{
+  animation: spin 5s linear infinite; /* Apply the 'spin' animation */
 
 }
 
@@ -63,7 +65,7 @@ body {
   transform-style: preserve-3d;
   transform: rotateY(360deg) translateZ(0);
 
-  transition: transform 0.5s; /* Add a transition for smooth rotation changes */
+  transition: transform 0.5s; 
 }
 
 .rotating-image:hover {
@@ -126,33 +128,60 @@ body {
 
 }
 
+
+
 .rotating {
 
   /* animation: spin 5s linear infinite; Apply the 'spin' animation */
 }
 
-.container{
-  padding: 0;
+.custom-container{
+
+  padding: 1rem 1rem 1rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: black solid 1px;
-  transition: all .5s;
-  box-sizing: border-box; /* Include borders and padding in the element's size */
+
+  /* transition: all .5s; */
+  border: black solid 2px;
+
+
 
 }
 
-.container:hover{
+.custom-container.top.left{
+  margin-right: -1px;
+  margin-bottom: -1px;
+
+}
+.custom-container.top.right{
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+.custom-container.bottom.left{
+  margin-right: -1px;
+  margin-top: -1px;
+}
+.custom-container.bottom.right{
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.custom-container:hover{
   background: #c9d0ee;
   background: #dae0fc  ;
 
-  transition: all .5s;
+  /* transition: all .5s; */
   
 }
 
-.container:hover img{
-  transition: all .65s;
-  transform: rotateY(360deg);
+
+
+.custom-container:hover img{
+  /* transition: all .65s; */
+  transform: scale(.25) rotateY(360deg);;
+
+  /* transform: rotateY(360deg); */
 
 
     /* animation: flipback 3s; */
@@ -160,18 +189,19 @@ body {
     /* animation-fill-mode: both; Make sure the final state is maintained */
 }
 .visible-text {
-  max-height: 0; /* Initially hidden */
+   max-height: 0; 
 
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
   /* visibility: hidden; */
-  transition: max-height 1s, opacity 1s; /* Ensure the transition duration is set */
 
+  transition: max-height .5s; /* Ensure the transition duration is set */
 
 }
 
-.container:hover .visible-text {
-  transition: max-height 1s, opacity 1s; /* Ensure the transition duration is set */
+.custom-container:hover .visible-text {
+
+  /* transition: max-height 1s, opacity 1s; Ensure the transition duration is set */
 
   max-width: 100%; /* Initially hidden */
 
@@ -181,6 +211,203 @@ body {
   opacity: 1;
 
 }
+
+.me-cell:hover .visible-text {
+  /* transition: max-height 1s, opacity 1s;  */
+  /* Ensure the transition duration is set */
+
+  max-width: 100%; /* Initially hidden */
+
+  max-height: 100vh; /* Initially hidden */
+
+  /* visibility: visible; */
+  opacity: 1;
+
+}
+
+.custom-table a{
+
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the text color from the parent element */
+  
+}
+
+.my-row{
+width: 100%
+}
+
+.me-bucket{
+  width: 20%;
+
+  
+}
+
+.me-cell{
+  transition: background .5s;
+
+}
+
+.me-cell:hover{
+
+    background: #dae0fc  ;
+    
+}
+
+.me-cell:hover img{
+  transform: rotateY(360deg);
+  transition: transform .5s;
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+  
+
+.my-row{
+  flex-direction: column; /* Stack flex items vertically */
+  border: green solid 4px;
+
+
+}
+
+.custom-container{
+  width: 100%;
+  border: red solid 2px;
+
+}
+}
+
+
+
+
+
+.me-center{
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+
+.me-grid {
+  margin: auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr); /* Create a 2x2 grid with equal columns */
+  grid-auto-rows: 1fr; /* Automatically adjust row height to fill available space equally */
+  gap: 1rem; /* Add a 10px gap between grid items */
+
+}
+
+.me-grid a{
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the text color from the parent element */
+}
+
+.me-cell {
+  /* padding: 0rem 1rem 0rem 1rem; */
+  border: black solid 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+
+
+  /* Add styling for the child divs if needed */
+}
+
+@media (max-width: 767px) {
+  .me-grid {
+    grid-template-columns: 1fr; /* Change to a single column layout for smaller screens */
+  }
+}
+
+.half{
+  width: 50%;
+}
+.first.half{
+  padding: 0 .5rem 0 1rem
+}
+
+.second.half{
+  padding: 0 1rem 0 .5rem
+}
+
+
+.duck-div{
+  background-color: aqua;
+  border: red solid 0px;
+  /* background-image: url('./images/wave.svg');  */
+  background: url('./images/wave.svg') center;
+  background: url('./images/layered-waves.svg') center;
+
+  background-size: cover;
+  background-position: center 70%; /* Adjust the second value (10%) to move the image upward */
+  z-index: 2;
+
+
+
+}
+
+.duck-div img{
+
+  border-radius: 50%;
+  animation: bobbing 2s ease-in-out infinite; /* Adjust duration and timing as needed */
+  z-index: 1; /* Set a lower z-index */
+
+
+
+}
+
+.duck-div {
+  position: relative;
+}
+
+/* Keyframes for the bobbing animation */
+@keyframes bobbing {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/layered-waves.svg') center;
+  background-size: cover;
+  background-position: center 73%; /* Adjust the second value (10%) to move the image upward */
+  pointer-events: none; /* Allow events to pass through this div */
+
+  z-index: 2; /* Set a lower z-index */
+
+}
+
+.duck-text{
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+
+
+}
+
+
+
+
+
+*{
+  /* border: red solid 1px; */
+}
+
 
 
 
