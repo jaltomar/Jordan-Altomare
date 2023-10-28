@@ -12,6 +12,7 @@ import wave from "./images/wave.svg";
 
 import duckSound from "./sounds/duckSound.mp3";
 import Cell from "./Cell";
+import NavBar from "./NavBar";
 
 export default function Home() {
   const [duckClickCount, setDuckClickCount] = useState(0);
@@ -45,14 +46,15 @@ export default function Home() {
 
   return (
     <>
-      {windowWidth < 760 && (
+      {/* {windowWidth < 760 && (
         <div>
           This will only render when the window width is less than 760 pixels.
         </div>
-      )}
+      )} */}
+      <NavBar />
 
-      <div className="d-flex header">
-        <h2 className="me-auto align-self-center mb-0">Jordan Altomare</h2>
+      {/* <div className="d-flex header">
+        <h2 className="me-auto align-self-center mb-0">Bob Odensky</h2>
 
         <a className="custom-link align-self-center" href="asdf">
           GitHub
@@ -60,7 +62,7 @@ export default function Home() {
         <a className="custom-link align-self-center" href="asdf">
           LinkedIn
         </a>
-      </div>
+      </div> */}
 
       <div className="p-4">
         <div className="d-flex" style={{ columnGap: "1rem" }}>
@@ -69,7 +71,9 @@ export default function Home() {
           </div>
 
           <div style={{ flex: 1 }}>
-            <h3>Who am I?</h3>
+            <h2>
+              <b>Who am I?</b>
+            </h2>
             <p style={{ textAlign: "left" }}>
               Some say I'm a myth. Others say I'm a ghost. In reality, I'm just
               a man who inaccurately recalls other people's descriptions of me.
@@ -110,10 +114,32 @@ export default function Home() {
           src={wave}
         />
       </div> */}
+      <div className="duck-textc mt-4">
+        {(duckClickCount === 0 || duckClickCount > 4) && (
+          <p style={{ visibility: "hidden", margin: "0" }}>Hidden duck text </p>
+        )}
 
-      <div className="me-auto duck-div mt-4">
+        {duckClickCount === 1 && (
+          <p className="typewriter"> It appears to be a duck...</p>
+        )}
+
+        {duckClickCount === 2 && (
+          <p className="typewriter">
+            Maybe if you click it again it will quack...
+          </p>
+        )}
+        {duckClickCount === 3 && (
+          <p className="typewriter">Hmmm... One more time perhaps?</p>
+        )}
+
+        {duckClickCount === 4 && <p className="typewriter">Amazing!</p>}
+      </div>
+
+      <div className="me-auto duck-div mb-5">
         <div className="background-image"></div>
-        <div className="duck-text">
+        <div className="sky"></div>
+
+        {/* <div className="duck-text">
           {duckClickCount == 1 && (
             <p className="typewriter"> It appears to be a duck...</p>
           )}
@@ -128,7 +154,7 @@ export default function Home() {
           )}
 
           {duckClickCount == 4 && <p className="typewriter">Amazing!</p>}
-        </div>
+        </div> */}
 
         <img
           onClick={() => {
@@ -144,7 +170,9 @@ export default function Home() {
       </div>
 
       <div className="p-4">
-        <h3 className="mt-4 mb-4">My Creations</h3>
+        <h2 className="mt-5 mb-4">
+          <b>My Creations</b>
+        </h2>
 
         <div className="me-grid">
           <Cell

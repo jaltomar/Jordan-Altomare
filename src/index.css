@@ -22,14 +22,13 @@ body {
   transition: all 0.3s;
   position: relative;
 }
-
 .custom-link::before {
   content: '';
-  width: 100%;
+  width: calc(100%); /* dont forget could 100%-1rem and then change left to .5rem*/
+  left: 0;
   height: 100%;
   position: absolute;
   bottom: 0;
-  left: 0;
   opacity: 0;
   transition: all 0.3s;
   border-top: solid 1px black;
@@ -38,10 +37,24 @@ body {
   transform: scale(.1, 1);
 }
 
+@media (max-width: 576px){
+.custom-link::before {
+  width: 100%;
+  left: 0;
+
+}
+}
+
 .custom-link:hover::before {
   opacity: 1; 
 
   transform: scale(1, 1); 
+}
+
+@media (max-width: 576px) {
+  .navbar .navbar-collapse {
+    padding-top: .5rem; 
+  }
 }
 
 .logo:hover{
@@ -357,7 +370,7 @@ width: 100%
 
   border-radius: 50%;
   animation: bobbing 2s ease-in-out infinite; /* Adjust duration and timing as needed */
-  z-index: 1; /* Set a lower z-index */
+  z-index: 2; /* Set a lower z-index */
 
 
 
@@ -387,9 +400,25 @@ width: 100%
   background-position: center 73%; /* Adjust the second value (10%) to move the image upward */
   pointer-events: none; /* Allow events to pass through this div */
 
-  z-index: 2; /* Set a lower z-index */
+  z-index: 3; /* Set a lower z-index */
 
 }
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 250, 148));
+
+  pointer-events: none; /* Allow events to pass through this div */
+
+  z-index: 0; /* Set a lower z-index */
+
+}
+
+
 
 .duck-text{
   position: absolute;
