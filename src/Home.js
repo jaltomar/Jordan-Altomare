@@ -74,7 +74,6 @@ export default function Home() {
               src={jordan}
             ></img>
           </div>
-
           <div className="bio-text-div">
             <h2>
               <b>Who am I?</b>
