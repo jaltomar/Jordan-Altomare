@@ -78,29 +78,32 @@ export default function Home() {
             <h2>
               <b>Who am I?</b>
             </h2>
-            <p style={{ textAlign: "left" }}>
-              Some say I'm a myth. Others say I'm a ghost. In reality, I'm just
-              a man who inaccurately recalls other people's descriptions of me.
-            </p>
-            <p style={{ textAlign: "left" }}>
-              I obtained my B.S. in Computer Science from University of
-              Rochester. I have a passion for creating websites that feel as
-              nice as they look. I also enjoy doing mobile app development.
-              Coding is the most fun for me when I get to have some creative
-              influence on the outcome.
-            </p>
-            <p style={{ textAlign: "left" }}>
-              Outside of coding, I enjoy exercising, playing guitar, and
-              listening to The Beatles. Have you given them a listen? They're
-              fantastic:{" "}
-              <a
-                href="https://www.youtube.com/watch?v=NCtzkaL2t_Y"
-                target="_blank"
-              >
-                Don't Let Me Down
-              </a>
-              .
-            </p>
+            <div className="bio-text-div-p">
+              <p style={{ textAlign: "left" }}>
+                Some say I'm a myth. Others say I'm a ghost. In reality, I'm
+                just a man who inaccurately recalls other people's descriptions
+                of me.
+              </p>
+              <p style={{ textAlign: "left" }}>
+                I obtained my B.S. in Computer Science from University of
+                Rochester. I have a passion for creating websites that feel as
+                nice as they look. I also enjoy doing mobile app development.
+                Coding is the most fun for me when I get to have some creative
+                influence on the outcome.
+              </p>
+              <p style={{ textAlign: "left" }}>
+                Outside of coding, I enjoy exercising, playing guitar, and
+                listening to The Beatles. Have you given them a listen? They're
+                fantastic:{" "}
+                <a
+                  href="https://www.youtube.com/watch?v=NCtzkaL2t_Y"
+                  target="_blank"
+                >
+                  Don't Let Me Down
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </div>
