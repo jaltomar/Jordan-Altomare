@@ -3,16 +3,32 @@ import { Navbar, Nav } from "react-bootstrap";
 const NavBar = () => {
   return (
     <Navbar expand="sm" className="header">
-      <h2 className="me-auto align-self-center mb-0">Bob Odensky</h2>
+      <h2 className="me-auto align-self-center mb-0">Jordan Altomare</h2>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          <Nav.Link className="custom-link" href="asdf">
+          <Nav.Link
+            target="_blank"
+            className="custom-link"
+            href="https://github.com/jaltomar"
+          >
             GitHub
           </Nav.Link>
-          <Nav.Link className="custom-link" href="asdf">
+          <Nav.Link
+            target="_blank"
+            className="custom-link"
+            href="https://www.linkedin.com/in/jordanaltomare/"
+          >
             LinkedIn
+          </Nav.Link>
+
+          <Nav.Link
+            target="_blank"
+            className="custom-link"
+            href="mailto:jaltomar@u.rochester.edu"
+          >
+            jaltomar@u.rochester.edu
           </Nav.Link>
           {/* You can add more Nav.Link components for additional links */}
         </Nav>

@@ -65,12 +65,17 @@ export default function Home() {
       </div> */}
 
       <div className="p-4">
-        <div className="d-flex" style={{ columnGap: "1rem" }}>
-          <div style={{ width: "25%" }}>
-            <img width="100%" alt="Jordan's photo" src={jordan}></img>
+        <div className="d-flex biography-div" style={{ columnGap: "1rem" }}>
+          <div className="photo-div">
+            <img
+              width="100%"
+              style={{ borderRadius: "1rem" }}
+              alt="Jordan's photo"
+              src={jordan}
+            ></img>
           </div>
 
-          <div style={{ flex: 1 }}>
+          <div className="bio-text-div">
             <h2>
               <b>Who am I?</b>
             </h2>
@@ -101,20 +106,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div
-        style={{
-          margin: "-200px 0",
-          width: "100%",
-        }}
-      >
-        <img
-          style={{
-            width: "100%",
-          }}
-          src={wave}
-        />
-      </div> */}
-      <div className="duck-textc mt-4">
+      <div className="mt-4">
         {(duckClickCount === 0 || duckClickCount > 4) && (
           <p style={{ visibility: "hidden", margin: "0" }}>Hidden duck text </p>
         )}
@@ -135,7 +127,7 @@ export default function Home() {
         {duckClickCount === 4 && <p className="typewriter">Amazing!</p>}
       </div>
 
-      <div className="me-auto duck-div mb-5">
+      <div className="me-auto duck-div">
         <div className="background-image"></div>
         <div className="sky"></div>
 
@@ -164,13 +156,15 @@ export default function Home() {
             }
           }}
           className="clickable"
-          width="30%"
           src={duck}
         ></img>
       </div>
+      <div className="purple-fade">
+        <img className="fake-duck" src={duck} />
+      </div>
 
-      <div className="p-4">
-        <h2 className="mt-5 mb-4">
+      <div style={{ padding: "0 1.5rem 1.5rem 1.5rem" }}>
+        <h2 className="mb-4">
           <b>My Creations</b>
         </h2>
 
@@ -191,8 +185,7 @@ export default function Home() {
             altText="Platesome logo"
             description="Platesome is a nutrition tracking website created with
            React. Users can login and track their healthy food choices.
-           Data is stored through Firebase, and users can view their
-           progress through daily, weekly, or monthly bar graphs."
+           Data is stored through Firebase."
           />
           <Cell
             link="https://abdelk7344.github.io/ezlearnguitar/"

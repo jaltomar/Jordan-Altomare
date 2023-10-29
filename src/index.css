@@ -9,13 +9,13 @@ body {
 }
 
 *{
-  border: red solid 0px;
+  /* border: red solid 1px; */
 }
 
 
 
 .custom-link {
-  line-height: 2; /* Set line-height to 1 for tight vertical alignment */
+  /* line-height: 1.5; Set line-height to 1 for tight vertical alignment */
 
   text-decoration: none;
   color: black;
@@ -324,6 +324,7 @@ width: 100%
 .me-cell {
   /* padding: 0rem 1rem 0rem 1rem; */
   border: black solid 2px;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -333,7 +334,7 @@ width: 100%
   /* Add styling for the child divs if needed */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .me-grid {
     grid-template-columns: 1fr; /* Change to a single column layout for smaller screens */
   }
@@ -356,24 +357,43 @@ width: 100%
   border: red solid 0px;
   /* background-image: url('./images/wave.svg');  */
   background: url('./images/wave.svg') center;
-  background: url('./images/layered-waves.svg') center;
+  background: url('./images/layered-waves.svg');
 
   background-size: cover;
-  background-position: center 70%; /* Adjust the second value (10%) to move the image upward */
+  background-position: center 73%; /* Adjust the second value (10%) to move the image upward */
   z-index: 2;
 
 
 
 }
 
-.duck-div img{
+.fake-duck{
+  width: 22%;
+  opacity: 0;
+}
 
+.duck-div img{
+margin-bottom: 2rem;
   border-radius: 50%;
   animation: bobbing 2s ease-in-out infinite; /* Adjust duration and timing as needed */
   z-index: 2; /* Set a lower z-index */
+  width:30%;
 
+}
 
+@media(max-width: 967px){
+.duck-div img{
+  margin-bottom: 1rem;
 
+}
+}
+
+@media(max-width: 576px){
+  .duck-div img{
+    width: 40%;
+    margin-bottom: 0rem;
+  
+  }
 }
 
 .duck-div {
@@ -391,13 +411,13 @@ width: 100%
 
 .background-image {
   position: absolute;
-  top: 0;
+  /* top: 2rem; */
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('./images/layered-waves.svg') center;
+  background: url('./images/wave.svg') center;
   background-size: cover;
-  background-position: center 73%; /* Adjust the second value (10%) to move the image upward */
+  background-position: center 89.5%; /* Adjust the second value (10%) to move the image upward */
   pointer-events: none; /* Allow events to pass through this div */
 
   z-index: 3; /* Set a lower z-index */
@@ -429,12 +449,51 @@ width: 100%
 
 }
 
+.photo-div{
+  min-width: 230px;
 
+  width: 25%;
+}
 
-
+@media (max-width: 576px) {
+  .photo-div{
+    width: 60%;
+    margin-bottom: 1rem;
+  }
+  .biography-div{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .me-grid {
+    grid-template-columns: 1fr; /* Change to a single column layout for smaller screens */
+  }
+}
 
 *{
   /* border: red solid 1px; */
+}
+
+.purple-fade{  
+  background: linear-gradient(to bottom, #a7b3e8, rgb(255, 255, 255));
+
+width: 100%;
+/* height: 300px; */
+
+}
+
+.bio-text-div{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+
+}
+
+.bio-text-div p{
+  /* max-width: 30%; */
+
 }
 
 
