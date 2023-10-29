@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Jordan-Altomare/static/css/main.7939ee22.css",
+    "main.js": "/Jordan-Altomare/static/js/main.343e220b.js",
+    "static/js/845.743803cf.chunk.js": "/Jordan-Altomare/static/js/845.743803cf.chunk.js",
+    "static/js/787.b0a1bca4.chunk.js": "/Jordan-Altomare/static/js/787.b0a1bca4.chunk.js",
+    "static/media/jordan_pic.png": "/Jordan-Altomare/static/media/jordan_pic.2a329b961ed973104b24.png",
+    "static/media/duck_2.png": "/Jordan-Altomare/static/media/duck_2.a2a1f56411bd56a3b44c.png",
+    "static/media/ezLearnLogo6.png": "/Jordan-Altomare/static/media/ezLearnLogo6.347e1364da89ec92b0c6.png",
+    "static/media/tinyMiracle6.png": "/Jordan-Altomare/static/media/tinyMiracle6.23d8f400ee6b4719d398.png",
+    "static/media/platesome7.png": "/Jordan-Altomare/static/media/platesome7.b993618ccb05d086a8e5.png",
+    "static/media/quikwizlogo6.png": "/Jordan-Altomare/static/media/quikwizlogo6.9d4db3d5f731e10620a7.png",
+    "static/media/logo_platesome.png": "/Jordan-Altomare/static/media/logo_platesome.a669944ba5dd406e3a90.png",
+    "static/media/duckSound.mp3": "/Jordan-Altomare/static/media/duckSound.0f16af3b7bf7b53681d9.mp3",
+    "static/media/layered-waves.svg": "/Jordan-Altomare/static/media/layered-waves.a9bbb2045426e52a37ae.svg",
+    "static/media/logo.svg": "/Jordan-Altomare/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/wave.svg": "/Jordan-Altomare/static/media/wave.c82906972586a2229b96c1a322d9842d.svg",
+    "index.html": "/Jordan-Altomare/index.html",
+    "main.7939ee22.css.map": "/Jordan-Altomare/static/css/main.7939ee22.css.map",
+    "main.343e220b.js.map": "/Jordan-Altomare/static/js/main.343e220b.js.map",
+    "845.743803cf.chunk.js.map": "/Jordan-Altomare/static/js/845.743803cf.chunk.js.map",
+    "787.b0a1bca4.chunk.js.map": "/Jordan-Altomare/static/js/787.b0a1bca4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7939ee22.css",
+    "static/js/main.343e220b.js"
+  ]
+}
