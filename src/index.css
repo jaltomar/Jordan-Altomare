@@ -506,7 +506,7 @@ p{
 
   @media (min-width: 1600px){
     .bio-text-div-p{
-      max-width: 70%;
+      max-width: 80%;
     }
     p{
       font-size:1.4em;
@@ -517,19 +517,10 @@ p{
     }
 }
 
-@media (min-width: 1900px){
-  p{
-    font-size:1.6em;
-  }
-  .custom-link{
-    font-size:1.6em;
-
-  }
-}
 
 @media (min-width: 2200px){
 .bio-text-div-p{
-  max-width: 70%;
+  max-width: 80%;
 }
 }
 
