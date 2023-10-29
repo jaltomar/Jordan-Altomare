@@ -1,30 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
   margin: 0;
-
-
-  font-family: 'Poppins', sans-serif;
-/* font-family:Verdana, Geneva, Tahoma, sans-serif */
+  font-family: "Poppins", sans-serif;
 }
-
-*{
-  /* border: red solid 1px; */
-}
-
-
 
 .custom-link {
-  /* line-height: 1.5; Set line-height to 1 for tight vertical alignment */
-
   text-decoration: none;
   color: black;
   transition: all 0.3s;
   position: relative;
 }
 .custom-link::before {
-  content: '';
-  width: calc(100%); /* dont forget could 100%-1rem and then change left to .5rem*/
+  content: "";
+  width: calc(
+    100%
+  ); /* dont forget could 100%-1rem and then change left to .5rem*/
   left: 0;
   height: 100%;
   position: absolute;
@@ -34,65 +25,59 @@ body {
   border-top: solid 1px black;
   border-bottom: solid 1px black;
 
-  transform: scale(.1, 1);
+  transform: scale(0.1, 1);
 }
 
-@media (max-width: 576px){
-.custom-link::before {
-  width: 100%;
-  left: 0;
-
-}
+@media (max-width: 576px) {
+  .custom-link::before {
+    width: 100%;
+    left: 0;
+  }
 }
 
 .custom-link:hover::before {
-  opacity: 1; 
+  opacity: 1;
 
-  transform: scale(1, 1); 
+  transform: scale(1, 1);
 }
 
 @media (max-width: 576px) {
   .navbar .navbar-collapse {
-    padding-top: .5rem; 
+    padding-top: 0.5rem;
   }
 }
 
-.logo:hover{
+.logo:hover {
   transform: rotateY(360deg);
-
 }
 
-.spinner{
-  animation: spin 5s linear infinite; /* Apply the 'spin' animation */
-
+.spinner {
+  animation: spin 5s linear infinite;
 }
-
-
 
 .rotating-image {
-  width: 100px; /* Adjust the width and height to match your image's dimensions */
+  width: 100px;
   height: 100px;
-  background-image: url('./images/logo_platesome.png'); /* Replace 'your-image.jpg' with the path to your image */
+  background-image: url("./images/logo_platesome.png");
   background-size: cover;
-  animation: spin 5s linear infinite; /* Apply the 'spin' animation */
+  animation: spin 5s linear infinite;
   transform-style: preserve-3d;
   transform: rotateY(360deg) translateZ(0);
 
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
 }
 
 .rotating-image:hover {
-  
-  animation: flipback .5s ease forwards; /* Apply the 'flipback' animation on hover */
-  animation-fill-mode: both; /* Make sure the final state is maintained */
+  animation: flipback 0.5s ease forwards;
+  animation-fill-mode: both;
 }
 
 @keyframes spin {
   0% {
-      transform: rotateY(0deg) translateZ(0);
+    transform: rotateY(0deg) translateZ(0);
   }
   100% {
-      transform: rotateY(360deg) translateZ(0);
+    transform: rotateY(360deg) translateZ(0);
   }
 }
 
@@ -101,222 +86,162 @@ body {
     transform: rotateY(0deg) translateZ(0);
   }
   to {
-      transform: rotateY(360deg) translateZ(0);
+    transform: rotateY(360deg) translateZ(0);
   }
 }
 
 .typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: transparent }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: transparent;
+  }
 }
 
-.clickable{
- cursor: pointer; 
+.clickable {
+  cursor: pointer;
 }
 
-.header{
+.header {
   column-gap: 1rem;
-  padding: .5rem 1.5rem .5rem 1.5rem;
-  /* background: #c4cceb; */
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   background: #c9d0ee;
-  background: #dae0fc  ;
-  color: black
-
+  background: #dae0fc;
+  color: black;
 }
 
-
-
-.rotating {
-
-  /* animation: spin 5s linear infinite; Apply the 'spin' animation */
-}
-
-.custom-container{
-
+.custom-container {
   padding: 1rem 1rem 1rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* transition: all .5s; */
   border: black solid 2px;
-
-
-
 }
 
-.custom-container.top.left{
+.custom-container.top.left {
   margin-right: -1px;
   margin-bottom: -1px;
-
 }
-.custom-container.top.right{
+.custom-container.top.right {
   margin-left: -1px;
   margin-bottom: -1px;
 }
-.custom-container.bottom.left{
+.custom-container.bottom.left {
   margin-right: -1px;
   margin-top: -1px;
 }
-.custom-container.bottom.right{
+.custom-container.bottom.right {
   margin-left: -1px;
   margin-top: -1px;
 }
 
-.custom-container:hover{
+.custom-container:hover {
   background: #c9d0ee;
-  background: #dae0fc  ;
-
-  /* transition: all .5s; */
-  
+  background: #dae0fc;
 }
 
-
-
-.custom-container:hover img{
-  /* transition: all .65s; */
-  transform: scale(.25) rotateY(360deg);;
-
-  /* transform: rotateY(360deg); */
-
-
-    /* animation: flipback 3s; */
-     /* Apply the 'flipback' animation on hover */
-    /* animation-fill-mode: both; Make sure the final state is maintained */
+.custom-container:hover img {
+  transform: scale(0.25) rotateY(360deg);
 }
 .visible-text {
-   max-height: 0; 
-
+  max-height: 0;
   overflow: hidden;
   opacity: 1;
-  /* visibility: hidden; */
-
-  transition: max-height .5s; /* Ensure the transition duration is set */
-
+  transition: max-height 0.5s; /* Ensure the transition duration is set */
 }
 
 .custom-container:hover .visible-text {
-
-  /* transition: max-height 1s, opacity 1s; Ensure the transition duration is set */
-
   max-width: 100%; /* Initially hidden */
 
   max-height: 100vh; /* Initially hidden */
 
   /* visibility: visible; */
   opacity: 1;
-
 }
 
 .me-cell:hover .visible-text {
-  /* transition: max-height 1s, opacity 1s;  */
-  /* Ensure the transition duration is set */
-
   max-width: 100%; /* Initially hidden */
-
   max-height: 100vh; /* Initially hidden */
-
-  /* visibility: visible; */
   opacity: 1;
-
 }
 
-.custom-table a{
-
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the text color from the parent element */
-  
+.custom-table a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the text color from the parent element */
 }
 
-.my-row{
-width: 100%
+.my-row {
+  width: 100%;
 }
 
-.me-bucket{
+.me-bucket {
   width: 20%;
-
-  
 }
 
-.me-cell{
-  transition: background .5s;
-
+.me-cell {
+  transition: background 0.5s;
 }
 
-.me-cell:hover{
-
-    background: #dae0fc  ;
-    
+.me-cell:hover {
+  background: #dae0fc;
 }
 
-.me-cell:hover img{
+.me-cell:hover img {
   transform: rotateY(360deg);
-  transition: transform .5s;
-
+  transition: transform 0.5s;
 }
-
-
-
-
 
 @media (max-width: 768px) {
+  .my-row {
+    flex-direction: column; /* Stack flex items vertically */
+    border: green solid 4px;
+  }
 
-  
-
-.my-row{
-  flex-direction: column; /* Stack flex items vertically */
-  border: green solid 4px;
-
-
+  .custom-container {
+    width: 100%;
+    border: red solid 2px;
+  }
 }
 
-.custom-container{
-  width: 100%;
-  border: red solid 2px;
-
-}
-}
-
-
-
-
-
-.me-center{
+.me-center {
   align-items: center;
   justify-content: space-between;
-
 }
-
-
 
 .me-grid {
   margin: auto;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr); /* Create a 2x2 grid with equal columns */
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Create a 2x2 grid with equal columns */
   grid-auto-rows: 1fr; /* Automatically adjust row height to fill available space equally */
   gap: 1rem; /* Add a 10px gap between grid items */
-
 }
 
-.me-grid a{
+.me-grid a {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit the text color from the parent element */
 }
@@ -330,7 +255,6 @@ width: 100%
   justify-content: space-around;
   padding: 0.5rem 0;
 
-
   /* Add styling for the child divs if needed */
 }
 
@@ -340,59 +264,73 @@ width: 100%
   }
 }
 
-.half{
+.half {
   width: 50%;
 }
-.first.half{
-  padding: 0 .5rem 0 1rem
+.first.half {
+  padding: 0 0.5rem 0 1rem;
 }
 
-.second.half{
-  padding: 0 1rem 0 .5rem
+.second.half {
+  padding: 0 1rem 0 0.5rem;
 }
 
+@media (max-width: 576px) {
+  .ez-learn {
+    margin-top: 1rem;
+  }
+  .first.half {
+    padding: 0;
+  }
 
-.duck-div{
+  .second.half {
+    padding: 0;
+    width: 95%;
+  }
+  .me-cell {
+    flex-direction: column;
+  }
+
+  .visible-text {
+    max-height: none;
+  }
+}
+
+.duck-div {
   background-color: aqua;
   border: red solid 0px;
   /* background-image: url('./images/wave.svg');  */
-  background: url('./images/wave.svg') center;
-  background: url('./images/layered-waves.svg');
+  background: url("./images/wave.svg") center;
+  background: url("./images/layered-waves.svg");
 
   background-size: cover;
   background-position: center 73%; /* Adjust the second value (10%) to move the image upward */
   z-index: 2;
-
-
-
 }
 
-.fake-duck{
+.fake-duck {
   width: 22%;
   opacity: 0;
 }
 
-.duck-div img{
-margin-bottom: 2rem;
+.duck-div img {
+  margin-bottom: 2rem;
   border-radius: 50%;
   animation: bobbing 2s ease-in-out infinite; /* Adjust duration and timing as needed */
   z-index: 2; /* Set a lower z-index */
-  width:30%;
-
+  width: 30%;
 }
 
-@media(max-width: 967px){
-.duck-div img{
-  margin-bottom: 1rem;
-
+@media (max-width: 967px) {
+  .duck-div img {
+    margin-bottom: 1rem;
+  }
 }
-}
 
-@media(max-width: 576px){
-  .duck-div img{
+@media (max-width: 576px) {
+  .duck-div img {
     width: 40%;
     margin-bottom: 0rem;
-  
   }
 }
 
@@ -402,12 +340,16 @@ margin-bottom: 2rem;
 
 /* Keyframes for the bobbing animation */
 @keyframes bobbing {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
-
 
 .background-image {
   position: absolute;
@@ -415,13 +357,12 @@ margin-bottom: 2rem;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('./images/wave.svg') center;
+  background: url("./images/wave.svg") center;
   background-size: cover;
   background-position: center 89.5%; /* Adjust the second value (10%) to move the image upward */
   pointer-events: none; /* Allow events to pass through this div */
 
   z-index: 3; /* Set a lower z-index */
-
 }
 
 .sky {
@@ -430,37 +371,35 @@ margin-bottom: 2rem;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 250, 148));
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(255, 250, 148)
+  );
 
   pointer-events: none; /* Allow events to pass through this div */
 
   z-index: 0; /* Set a lower z-index */
-
 }
 
-
-
-.duck-text{
+.duck-text {
   position: absolute;
   top: 0;
   width: 100%;
-
-
-
 }
 
-.photo-div{
+.photo-div {
   min-width: 230px;
 
   width: 25%;
 }
 
 @media (max-width: 576px) {
-  .photo-div{
+  .photo-div {
     width: 60%;
     margin-bottom: 1rem;
   }
-  .biography-div{
+  .biography-div {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -470,75 +409,51 @@ margin-bottom: 2rem;
   }
 }
 
-*{
+* {
   /* border: red solid 1px; */
 }
 
-.purple-fade{  
+.purple-fade {
   background: linear-gradient(to bottom, #a7b3e8, rgb(255, 255, 255));
 
-width: 100%;
-/* height: 300px; */
-
+  width: 100%;
+  /* height: 300px; */
 }
 
-.bio-text-div{
-  flex:1;
+.bio-text-div {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
-p{
+p {
   font-size: 1em;
 }
-@media (min-width: 1200px){
-  p{
-    font-size:1.2em;
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.2em;
   }
-  .custom-link{
-    font-size:1.2em;
-
+  .custom-link {
+    font-size: 1.2em;
   }
 }
 
-  @media (min-width: 1600px){
-    .bio-text-div-p{
-      max-width: 80%;
-    }
-    p{
-      font-size:1.4em;
-    }
-    .custom-link{
-      font-size:1.4em;
-  
-    }
+@media (min-width: 1600px) {
+  .bio-text-div-p {
+    max-width: 80%;
+  }
+  p {
+    font-size: 1.4em;
+  }
+  .custom-link {
+    font-size: 1.4em;
+  }
 }
 
-
-@media (min-width: 2200px){
-.bio-text-div-p{
-  max-width: 80%;
+@media (min-width: 2200px) {
+  .bio-text-div-p {
+    max-width: 80%;
+  }
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

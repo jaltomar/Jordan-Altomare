@@ -1,12 +1,19 @@
 import React from "react";
 
-export default function Cell({ link, altText, imgSrc, title, description }) {
+export default function Cell({
+  link,
+  altText,
+  imgSrc,
+  title,
+  description,
+  titleClass,
+}) {
   return (
     <a href={link} target="_blank" className="me-cell">
       <div className="first half">
         <img alt={altText} width="100%" src={imgSrc} />
       </div>
-      <div className="second half">
+      <div className={"second half " + titleClass}>
         <h3>{title}</h3>
         <p style={{ margin: "0" }} className="visible-text">
           {description}

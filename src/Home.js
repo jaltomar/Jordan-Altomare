@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
 
-import Button from "react-bootstrap/Button";
 import platesomeLogo from "./images/platesome7.png";
 import duck from "./images/duck_2.png";
 import jordan from "./images/jordan_pic.png";
 import quikwiz from "./images/quikwizlogo6.png";
 import tinyMiracle from "./images/tinyMiracle6.png";
 import ezLearn from "./images/ezLearnLogo6.png";
-import wave from "./images/wave.svg";
 
 import duckSound from "./sounds/duckSound.mp3";
 import Cell from "./Cell";
@@ -22,47 +20,9 @@ export default function Home() {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    // Function to update the window width state when the window is resized
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Add a window resize event listener
-    window.addEventListener("resize", handleResize);
-
-    // Remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []); // The empty dependency array ensures this effect runs only once after initial render
-
-  const divStyle = {
-    display: "inline-block",
-    width: "calc(50% - 0.5px)", // Subtract half of the border width
-    border: "1px solid #000",
-    boxSizing: "border-box",
-  };
-
   return (
     <>
-      {/* {windowWidth < 760 && (
-        <div>
-          This will only render when the window width is less than 760 pixels.
-        </div>
-      )} */}
       <NavBar />
-
-      {/* <div className="d-flex header">
-        <h2 className="me-auto align-self-center mb-0">Bob Odensky</h2>
-
-        <a className="custom-link align-self-center" href="asdf">
-          GitHub
-        </a>
-        <a className="custom-link align-self-center" href="asdf">
-          LinkedIn
-        </a>
-      </div> */}
 
       <div className="p-4">
         <div className="d-flex biography-div" style={{ columnGap: "1rem" }}>
@@ -133,23 +93,6 @@ export default function Home() {
         <div className="background-image"></div>
         <div className="sky"></div>
 
-        {/* <div className="duck-text">
-          {duckClickCount == 1 && (
-            <p className="typewriter"> It appears to be a duck...</p>
-          )}
-
-          {duckClickCount == 2 && (
-            <p className="typewriter">
-              Maybe if you click it again it will quack...
-            </p>
-          )}
-          {duckClickCount == 3 && (
-            <p className="typewriter">Hmmm... One more time perhaps?</p>
-          )}
-
-          {duckClickCount == 4 && <p className="typewriter">Amazing!</p>}
-        </div> */}
-
         <img
           onClick={() => {
             setDuckClickCount(duckClickCount + 1);
@@ -193,6 +136,7 @@ export default function Home() {
             link="https://abdelk7344.github.io/ezlearnguitar/"
             imgSrc={ezLearn}
             title="EZLearn GuitAR"
+            titleClass={"ez-learn"}
             altText="EZLearn GuitAR logo"
             description="EZLearn GuitAR is an iOS AR application that helps people
             learn to play guitar. AR markers are displayed on the neck
@@ -208,12 +152,6 @@ export default function Home() {
             questions you can get correct!"
           />
         </div>
-
-        {/* <div className="d-flex">
-        <a href="asdf" className="logo">
-          <img src={platesomeLogo} />
-        </a>
-      </div> */}
       </div>
     </>
   );
