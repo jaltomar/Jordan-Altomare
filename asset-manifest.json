@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Jordan-Altomare/static/css/main.9f91dfe5.css",
+    "main.css": "/Jordan-Altomare/static/css/main.9986a097.css",
     "main.js": "/Jordan-Altomare/static/js/main.399b2d41.js",
     "static/js/845.743803cf.chunk.js": "/Jordan-Altomare/static/js/845.743803cf.chunk.js",
     "static/js/787.b0a1bca4.chunk.js": "/Jordan-Altomare/static/js/787.b0a1bca4.chunk.js",
@@ -16,13 +16,13 @@
     "static/media/logo.svg": "/Jordan-Altomare/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/wave.svg": "/Jordan-Altomare/static/media/wave.c82906972586a2229b96c1a322d9842d.svg",
     "index.html": "/Jordan-Altomare/index.html",
-    "main.9f91dfe5.css.map": "/Jordan-Altomare/static/css/main.9f91dfe5.css.map",
+    "main.9986a097.css.map": "/Jordan-Altomare/static/css/main.9986a097.css.map",
     "main.399b2d41.js.map": "/Jordan-Altomare/static/js/main.399b2d41.js.map",
     "845.743803cf.chunk.js.map": "/Jordan-Altomare/static/js/845.743803cf.chunk.js.map",
     "787.b0a1bca4.chunk.js.map": "/Jordan-Altomare/static/js/787.b0a1bca4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f91dfe5.css",
+    "static/css/main.9986a097.css",
     "static/js/main.399b2d41.js"
   ]
 }
