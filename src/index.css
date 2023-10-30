@@ -305,7 +305,7 @@ body {
 
   background-size: cover;
   background-position: center 73%; /* Adjust the second value (10%) to move the image upward */
-  z-index: 2;
+  z-index: 1;
 }
 
 .fake-duck {
@@ -321,23 +321,6 @@ body {
   width: 30%;
 }
 
-@media (max-width: 967px) {
-  .duck-div img {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .duck-div img {
-    width: 40%;
-    margin-bottom: 0rem;
-  }
-}
-
-.duck-div {
-  position: relative;
-}
-
 /* Keyframes for the bobbing animation */
 @keyframes bobbing {
   0% {
@@ -351,6 +334,35 @@ body {
   }
 }
 
+@media (max-width: 967px) {
+  .duck-div img {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Keyframes for the bobbing animation */
+  @keyframes bobbing {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .duck-div img {
+    width: 50%;
+    margin-bottom: 0rem;
+  }
+}
+
+.duck-div {
+  position: relative;
+}
+
 .background-image {
   position: absolute;
   /* top: 2rem; */
@@ -362,7 +374,7 @@ body {
   background-position: center 89.5%; /* Adjust the second value (10%) to move the image upward */
   pointer-events: none; /* Allow events to pass through this div */
 
-  z-index: 3; /* Set a lower z-index */
+  z-index: 20; /* Set a lower z-index */
 }
 
 .sky {
