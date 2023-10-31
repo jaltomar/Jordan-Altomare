@@ -5,6 +5,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.navbar-nav .nav-link:hover {
+  color: inherit;
+}
 .custom-link {
   text-decoration: none;
   color: black;
