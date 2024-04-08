@@ -68,46 +68,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-4">
-        {(duckClickCount === 0 || duckClickCount > 4) && (
-          <p style={{ visibility: "hidden", margin: "0" }}>Hidden duck text </p>
-        )}
-
-        {duckClickCount === 1 && (
-          <p className="typewriter"> It appears to be a duck...</p>
-        )}
-
-        {duckClickCount === 2 && (
-          <p className="typewriter">
-            Maybe if you click it again it will quack...
-          </p>
-        )}
-        {duckClickCount === 3 && (
-          <p className="typewriter">Hmmm... One more time perhaps?</p>
-        )}
-
-        {duckClickCount === 4 && <p className="typewriter">Amazing!</p>}
-      </div>
-
-      <div className="me-auto duck-div">
-        <div className="background-image"></div>
-        <div className="sky"></div>
-
-        <img
-          onClick={() => {
-            setDuckClickCount(duckClickCount + 1);
-            if (duckClickCount > 2) {
-              playSound();
-            }
-          }}
-          className="clickable"
-          src={duck}
-        ></img>
-      </div>
-      <div className="purple-fade">
-        <img className="fake-duck" src={duck} />
-      </div>
-
       <div style={{ padding: "0 1.5rem 1.5rem 1.5rem" }}>
         <h2 className="mb-4">
           <b>My Creations</b>
@@ -152,6 +112,46 @@ export default function Home() {
             questions you can get correct!"
           />
         </div>
+      </div>
+
+      <div className="mt-4">
+        {(duckClickCount === 0 || duckClickCount > 4) && (
+          <p style={{ visibility: "hidden", margin: "0" }}>Hidden duck text </p>
+        )}
+
+        {duckClickCount === 1 && (
+          <p className="typewriter"> It appears to be a duck...</p>
+        )}
+
+        {duckClickCount === 2 && (
+          <p className="typewriter">
+            Maybe if you click it again it will quack...
+          </p>
+        )}
+        {duckClickCount === 3 && (
+          <p className="typewriter">Hmmm... One more time perhaps?</p>
+        )}
+
+        {duckClickCount === 4 && <p className="typewriter">Amazing!</p>}
+      </div>
+
+      <div className="me-auto duck-div">
+        <div className="background-image"></div>
+        <div className="sky"></div>
+
+        <img
+          onClick={() => {
+            setDuckClickCount(duckClickCount + 1);
+            if (duckClickCount > 2) {
+              playSound();
+            }
+          }}
+          className="clickable"
+          src={duck}
+        ></img>
+      </div>
+      <div className="purple-fade">
+        <img className="fake-duck" src={duck} />
       </div>
     </>
   );
