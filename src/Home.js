@@ -41,8 +41,7 @@ export default function Home() {
             <div className="bio-text-div-p">
               <p style={{ textAlign: "left" }}>
                 Some say I'm a myth. Others say I'm a ghost. In reality, I'm
-                just a man who inaccurately recalls other people's descriptions
-                of me.
+                just a man who misremembers people's descriptions of me.
               </p>
               <p style={{ textAlign: "left" }}>
                 I obtained my B.S. in Computer Science from University of
